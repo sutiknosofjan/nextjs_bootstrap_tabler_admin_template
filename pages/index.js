@@ -1,29 +1,17 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+
 import {
   FaAsterisk,
-  FaBattleNet,
   FaBell,
-  FaBoxOpen,
   FaBriefcase,
-  FaCalendar,
   FaCalendarAlt,
-  FaCalendarDay,
-  FaChartArea,
-  FaChartBar,
-  FaChartPie,
   FaChevronCircleLeft,
   FaChevronCircleRight,
-  FaCodepen,
-  FaDeskpro,
-  FaDesktop,
   FaEnvelope,
   FaFlag,
   FaHome,
   FaKey,
-  FaLaptop,
-  FaLaptopCode,
-  FaLaptopHouse,
   FaMoneyBill,
   FaNewspaper,
   FaPencilAlt,
@@ -37,6 +25,29 @@ import {
 } from "react-icons/fa";
 
 export default function Home() {
+  const [_loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    console.log("After 2m loading:false");
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  const btnDeleteClick = (e, id) => {
+    e.preventDefault();
+
+    console.log("Delete click : " + id + " >> process to Backend");
+    alert("Delete click : " + id + " >> process to Backend");
+  };
+
+  if (_loading)
+    return (
+      <div className="text-center mt-5">
+        <div className="spinner-border spinner-border-sm" />
+      </div>
+    );
+
   return (
     <div className="page">
       <header className="navbar fixed-top bg-azure-lt">
@@ -61,32 +72,40 @@ export default function Home() {
                   <span className="mx-2">
                     <FaFlag />
                   </span>
-                  Orgz
+                  Menu 1
                 </Link>
 
                 <Link href="" className="dropdown-item">
                   <span className="mx-2">
                     <FaNewspaper />
                   </span>
-                  News
+                  Menu 2
                 </Link>
 
                 <Link href="" className="dropdown-item">
                   <span className="mx-2">
                     <FaBriefcase />
                   </span>
-                  Jobs
+                  Menu 3
                 </Link>
               </div>
             </div>
 
-            <div className="nav-item me-1">
+            <div className="nav-item me-3">
+              <select className="form-select form-control-rounded">
+                <option>Category - Company 1</option>
+                <option>Category - Company 2</option>
+                <option>Category - Company 3</option>
+              </select>
+            </div>
+
+            <div className="nav-item me-3">
               <Link href="/" title="Dashboard" className="nav-link">
                 <FaCalendarAlt size="17" />
               </Link>
             </div>
 
-            <div className="nav-item dropdown me-1">
+            <div className="nav-item dropdown me-3">
               <Link
                 href="/"
                 title="HR"
@@ -102,27 +121,17 @@ export default function Home() {
                 <hr className="my-1" />
 
                 <Link href="#" className="dropdown-item mx-2">
-                  01. Positions
+                  01. Menu 01
                 </Link>
 
                 <Link href="#" className="dropdown-item mx-2">
-                  02. Vacancies
-                </Link>
-
-                <hr className="my-1" />
-
-                <Link href="#" className="dropdown-item mx-2">
-                  03. Recruitments
-                </Link>
-
-                <Link href="#" className="dropdown-item mx-2">
-                  04. Staffs
+                  02. Menu 02
                 </Link>
 
                 <hr className="my-1" />
 
                 <Link href="#" className="dropdown-item mx-2">
-                  05. Attendances
+                  03. Menu 03
                 </Link>
               </div>
             </div>
@@ -143,21 +152,21 @@ export default function Home() {
                 <hr className="my-1" />
 
                 <Link href="#" className="dropdown-item mx-2">
-                  01. Purchases
+                  01. Menu 01
                 </Link>
 
                 <Link href="#" className="dropdown-item mx-2">
-                  02. Purchases Payment
+                  02. Menu 02
                 </Link>
 
                 <hr className="my-1" />
 
                 <Link href="#" className="dropdown-item mx-2">
-                  03. Sales
+                  03. Menu 03
                 </Link>
 
                 <Link href="#" className="dropdown-item mx-2">
-                  04. Sales Payment
+                  04. Menu 04
                 </Link>
 
                 <hr className="my-1" />
@@ -170,9 +179,10 @@ export default function Home() {
           </div>
 
           <div className="navbar-nav flex-row">
-            <div className="nav-item dropdown me-1">
+            <div className="nav-item dropdown me-3">
               <Link
-                href="/message"
+                href="#"
+                title="Message"
                 className="nav-link"
                 data-bs-toggle="dropdown"
               >
@@ -203,9 +213,10 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="nav-item dropdown me-2">
+            <div className="nav-item dropdown me-3">
               <Link
-                href="/notifications"
+                href="#"
+                title="Notification"
                 className="nav-link"
                 data-bs-toggle="dropdown"
               >
@@ -239,7 +250,12 @@ export default function Home() {
             </div>
 
             <div className="nav-item dropdown">
-              <Link href="#" className="nav-link" data-bs-toggle="dropdown">
+              <Link
+                href="#"
+                title="User"
+                className="nav-link"
+                data-bs-toggle="dropdown"
+              >
                 <img
                   src="images/avatars/3.png"
                   className="avatar avatar-sm rounded-circle"
@@ -255,21 +271,21 @@ export default function Home() {
                   <span className="mx-2">
                     <FaShareAlt />
                   </span>
-                  my Articles
+                  Menu 01
                 </Link>
 
                 <Link href="/articles" className="dropdown-item">
                   <span className="mx-2">
                     <FaFlag />
                   </span>
-                  my Pages
+                  Menu 02
                 </Link>
 
                 <Link href="/articles" className="dropdown-item">
                   <span className="mx-2">
                     <FaBriefcase />
                   </span>
-                  my Jobs
+                  Menu 03
                 </Link>
 
                 <hr className="my-1" />
@@ -278,7 +294,7 @@ export default function Home() {
                   <span className="mx-2">
                     <FaUser />
                   </span>
-                  Profile
+                  my Profile
                 </Link>
 
                 <Link href="/changepassword" className="dropdown-item">
@@ -402,17 +418,21 @@ export default function Home() {
                   </thead>
                   <tbody>
                     <tr>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>123</td>
+                      <td className="text-end">1</td>
+                      <td>Code 1</td>
+                      <td>Name 1</td>
                       <td>
-                        <Link href="#" title="Edit" className="me-2">
+                        <Link
+                          href="/payment/edit/1"
+                          title="Edit"
+                          className="me-2"
+                        >
                           <FaPencilAlt size="15" />
                         </Link>
 
                         <a
                           title="Delete"
-                          onClick={""}
+                          onClick={(e) => btnDeleteClick(e, 1)}
                           type="button"
                           className="text-danger"
                         >
@@ -421,192 +441,49 @@ export default function Home() {
                       </td>
                     </tr>
                     <tr>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>123</td>
+                      <td className="text-end">2</td>
+                      <td>Code 2</td>
+                      <td>Name 2</td>
                       <td>
-                        <td>
-                          <Link href="#" title="Edit" className="me-2">
-                            <FaPencilAlt size="15" />
-                          </Link>
+                        <Link
+                          href="/payment/edit/2"
+                          title="Edit"
+                          className="me-2"
+                        >
+                          <FaPencilAlt size="15" />
+                        </Link>
 
-                          <a
-                            title="Delete"
-                            onClick={""}
-                            type="button"
-                            className="text-danger"
-                          >
-                            <FaTimesCircle size="20" />
-                          </a>
-                        </td>
+                        <a
+                          title="Delete"
+                          onClick={(e) => btnDeleteClick(e, 2)}
+                          type="button"
+                          className="text-danger"
+                        >
+                          <FaTimesCircle size="20" />
+                        </a>
                       </td>
                     </tr>
                     <tr>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>123</td>
+                      <td className="text-end">3</td>
+                      <td>Code 3</td>
+                      <td>Name 3</td>
                       <td>
-                        <td>
-                          <Link href="#" title="Edit" className="me-2">
-                            <FaPencilAlt size="15" />
-                          </Link>
+                        <Link
+                          href="/payment/edit/3"
+                          title="Edit"
+                          className="me-2"
+                        >
+                          <FaPencilAlt size="15" />
+                        </Link>
 
-                          <a
-                            title="Delete"
-                            onClick={""}
-                            type="button"
-                            className="text-danger"
-                          >
-                            <FaTimesCircle size="20" />
-                          </a>
-                        </td>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>
-                        <td>
-                          <Link href="#" title="Edit" className="me-2">
-                            <FaPencilAlt size="15" />
-                          </Link>
-
-                          <a
-                            title="Delete"
-                            onClick={""}
-                            type="button"
-                            className="text-danger"
-                          >
-                            <FaTimesCircle size="20" />
-                          </a>
-                        </td>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>
-                        <td>
-                          <Link href="#" title="Edit" className="me-2">
-                            <FaPencilAlt size="15" />
-                          </Link>
-
-                          <a
-                            title="Delete"
-                            onClick={""}
-                            type="button"
-                            className="text-danger"
-                          >
-                            <FaTimesCircle size="20" />
-                          </a>
-                        </td>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>
-                        <td>
-                          <Link href="#" title="Edit" className="me-2">
-                            <FaPencilAlt size="15" />
-                          </Link>
-
-                          <a
-                            title="Delete"
-                            onClick={""}
-                            type="button"
-                            className="text-danger"
-                          >
-                            <FaTimesCircle size="20" />
-                          </a>
-                        </td>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>
-                        <td>
-                          <Link href="#" title="Edit" className="me-2">
-                            <FaPencilAlt size="15" />
-                          </Link>
-
-                          <a
-                            title="Delete"
-                            onClick={""}
-                            type="button"
-                            className="text-danger"
-                          >
-                            <FaTimesCircle size="20" />
-                          </a>
-                        </td>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>
-                        <td>
-                          <Link href="#" title="Edit" className="me-2">
-                            <FaPencilAlt size="15" />
-                          </Link>
-
-                          <a
-                            title="Delete"
-                            onClick={""}
-                            type="button"
-                            className="text-danger"
-                          >
-                            <FaTimesCircle size="20" />
-                          </a>
-                        </td>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>
-                        <td>
-                          <Link href="#" title="Edit" className="me-2">
-                            <FaPencilAlt size="15" />
-                          </Link>
-
-                          <a
-                            title="Delete"
-                            onClick={""}
-                            type="button"
-                            className="text-danger"
-                          >
-                            <FaTimesCircle size="20" />
-                          </a>
-                        </td>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>123</td>
-                      <td>
-                        <td>
-                          <Link href="#" title="Edit" className="me-2">
-                            <FaPencilAlt size="15" />
-                          </Link>
-
-                          <a
-                            title="Delete"
-                            onClick={""}
-                            type="button"
-                            className="text-danger"
-                          >
-                            <FaTimesCircle size="20" />
-                          </a>
-                        </td>
+                        <a
+                          title="Delete"
+                          onClick={(e) => btnDeleteClick(e, 3)}
+                          type="button"
+                          className="text-danger"
+                        >
+                          <FaTimesCircle size="20" />
+                        </a>
                       </td>
                     </tr>
                   </tbody>
