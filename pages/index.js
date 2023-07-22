@@ -64,7 +64,7 @@ export default function Home() {
               </Link>
 
               <div className="dropdown-menu dropdown-menu-arrow">
-                <h3 className="m-2 mx-3">n e x t o</h3>
+                <h3 className="m-2 mx-3">n e x t o . i d</h3>
 
                 <hr className="my-1" />
 
