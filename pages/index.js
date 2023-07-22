@@ -252,7 +252,7 @@ export default function Home() {
             <div className="nav-item dropdown">
               <Link
                 href="#"
-                title="Firstname/Lastname"
+                title="Sutikno"
                 className="nav-link"
                 data-bs-toggle="dropdown"
               >
@@ -263,7 +263,7 @@ export default function Home() {
               </Link>
 
               <div className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <h3 className="m-2 mx-3">Firstname/Lastname</h3>
+                <h3 className="m-2 mx-3">Sutikno Sofjan</h3>
 
                 <hr className="my-1" />
 
