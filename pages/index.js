@@ -64,7 +64,7 @@ export default function Home() {
               </Link>
 
               <div className="dropdown-menu dropdown-menu-arrow">
-                <h3 className="m-2 mx-3">company name</h3>
+                <h3 className="m-2 mx-3">Company Name</h3>
 
                 <hr className="my-1" />
 
@@ -294,7 +294,7 @@ export default function Home() {
                   <span className="mx-2">
                     <FaUser />
                   </span>
-                  my Profile
+                  My Profile
                 </Link>
 
                 <Link href="/changepassword" className="dropdown-item">
