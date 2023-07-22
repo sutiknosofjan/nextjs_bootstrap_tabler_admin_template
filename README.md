@@ -6,7 +6,7 @@
 - https://react.dev
 - ver : 18.2.0
 
-## React Icons
+## REACT Icons
 
 - Include popular icons in your React projects easily with react-icons, which utilizes ES6 imports that allows you to include only the icons that your project is using.
 - https://react-icons.github.io/react-icons/
