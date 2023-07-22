@@ -12,13 +12,13 @@
 - https://react-icons.github.io/react-icons/
 - ver : 4.10.1
 
-## NEXT Framework
+## NEXT.js Framework
 
 - The React Framework for the Web
 - https://nextjs.org
 - ver : 13.4.10
 
-## TABLER
+## TABLER.io
 
 - Develop beautiful web apps with Tabler
 - https://tabler.io
