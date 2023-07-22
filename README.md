@@ -1,4 +1,4 @@
-## NEXTjs Bootstrap 5 Tabler Admin Template
+## NEXTjs Bootstrap5 Tabler.io - Admin Template
 
 ## REACT.js
 
