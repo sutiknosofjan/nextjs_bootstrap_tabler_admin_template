@@ -263,7 +263,7 @@ export default function Home() {
               </Link>
 
               <div className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <h3 className="m-2 mx-3">User</h3>
+                <h3 className="m-2 mx-3">Firstname/Lastname</h3>
 
                 <hr className="my-1" />
 
