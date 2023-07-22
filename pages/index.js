@@ -491,13 +491,16 @@ export default function Home() {
 
                 <div className="d-flex align-items-center">
                   <p className="m-0 text-muted">
-                    Rows : <span>1</span>-<span className="me-2">10</span>
+                    Rows : <span>1</span>-<span className="me-2">3</span>
                     <span className="me-2">|</span>
-                    <span>10/26</span>
+                    <span>3/3</span>
                   </p>
                   <ul className="pagination m-0 ms-auto">
                     <li className="page-item me-1">
                       <select className="form-select">
+                        <option>10</option>
+                        <option>20</option>
+                        <option>50</option>
                         <option>100</option>
                       </select>
                     </li>
@@ -506,7 +509,7 @@ export default function Home() {
                         <FaChevronCircleLeft size="30" />
                       </a>
                     </li>
-                    <li className="page-item pt-2">1/2</li>
+                    <li className="page-item pt-2">1/1</li>
                     <li className="page-item">
                       <a className="page-link" href="#">
                         <FaChevronCircleRight size="30" />
